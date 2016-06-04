@@ -13,12 +13,14 @@
 
   <div class="field">
     <%= f.label :nom_id %><br>
-    <%= f.text_field :nom_id %>
+    <%= f.text_field :nom_id, value: params[:nom_id] %>
   </div>
   <div class="field">
     <%= f.label :vote_type %><br>
-    <%= f.number_field :vote_type %>
+    <%= f.select :vote_type, Vote.vote_types.keys, selected: params[:vote_type] %>
   </div>
+  <%= f.text_field :nom_id, value: current_user.id %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
