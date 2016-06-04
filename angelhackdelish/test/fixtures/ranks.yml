@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nom_id: 
+  leaderboard_id: 
+  votecount: 1
+  position: 1
+
+two:
+  nom_id: 
+  leaderboard_id: 
+  votecount: 1
+  position: 1
