@@ -14,7 +14,7 @@
   <tbody>
     <% @votes.each do |vote| %>
       <tr>
-        <td><%= vote.nom %></td>
+        <td><%= vote.nom.id %></td>
         <td><%= vote.vote_type %></td>
         <td><%= link_to 'Show', vote %></td>
         <td><%= link_to 'Edit', edit_vote_path(vote) %></td>
