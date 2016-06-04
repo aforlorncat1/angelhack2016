@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p> This is the item page</p>
-
-<p>
-  <strong>Food Category:</strong>
-  <%= @nom.food.name %>
-</p>
+<h1><%=@nom.restaurant.name%>'s <%=@nom.food.name%></h1>
 
 <p>
   <strong>Price:</strong>
@@ -16,12 +11,6 @@
   <strong>Votecount:</strong>
   <%= @nom.votecount %>
 </p>
-
-<p>
-  <strong>Restaurant:</strong>
-  <%= @nom.restaurant.name %>
-</p>
-
 
 <p>
   <strong>Restaurant Location:</strong>
@@ -37,6 +26,7 @@ X
 X
 X -->
 
+<%= link_to 'Upvote', new_vote_path(id: @nom) %> | <%= link_to 'Downvote', new_vote_path(@nom) %>
 
 <%= link_to 'Edit', edit_nom_path(@nom) %> |
 <%= link_to 'Back', noms_path %>
