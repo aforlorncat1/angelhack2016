@@ -17,7 +17,7 @@
     <% @noms.each do |nom| %>
       <tr>
         <td><%= nom.price %></td>
-        <td><%= nom.votecount %></td>
+        <td><%= nom.vote_count %></td>
         <td><%= nom.restaurant_id %></td>
         <td><%= nom.food_id %></td>
         <td><%= link_to 'Show', nom %></td>
@@ -29,5 +29,6 @@
 </table>
 
 <br>
+
 
 <%= link_to 'New Nom', new_nom_path %>
