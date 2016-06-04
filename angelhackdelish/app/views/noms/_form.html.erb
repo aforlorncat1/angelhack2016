@@ -1,0 +1,34 @@
+<%= form_for(@nom) do |f| %>
+  <% if @nom.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nom.errors.count, "error") %> prohibited this nom from being saved:</h2>
+
+      <ul>
+      <% @nom.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :food_id %><br>
+    <%= select_tag(:food_id, options_for_select(@food)) %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :votecount %><br>
+    <%= f.number_field :votecount %>
+  </div>
+  <div class="field">
+    <%= f.label :restaurant_id %><br>
+    <%= f.number_field :restaurant_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
