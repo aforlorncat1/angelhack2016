@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @nom.price %>
+</p>
+
+<p>
+  <strong>Votecount:</strong>
+  <%= @nom.votecount %>
+</p>
+
+<p>
+  <strong>Restaurant:</strong>
+  <%= @nom.restaurant_id %>
+</p>
+
+<p>
+  <strong>Food:</strong>
+  <%= @nom.food_id %>
+</p>
+
+<%= link_to 'Edit', edit_nom_path(@nom) %> |
+<%= link_to 'Back', noms_path %>
