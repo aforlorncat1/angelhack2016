@@ -17,10 +17,10 @@ Restaurant.create(name: "McDonalds", address: "1, Jalan Ampang", city: "Kuala Lu
 Restaurant.create(name: "Sushi King", address: "Quill City Mall, Jalan Sultan Ismail", city: "Kuala Lumpur", state: "Kuala Lumpur")
 Restaurant.create(name: "TGI Fridays", address: "35, Jalan Bukit Bintang, Bukit Bintang, 55100", city: "Kuala Lumpur", state: "Kuala Lumpur")
 
-Restaurant.find(1).noms.create(food_id: 5, price: 6, vote_count: 0)
-Restaurant.find(1).noms.create(food_id: 5, price: 6, vote_count: 0)
-Restaurant.find(1).noms.create(food_id: 5, price: 6, vote_count: 0)
-Restaurant.find(1).noms.create(food_id: 5, price: 6, vote_count: 0)
+Restaurant.find(1).noms.create(food_id: 5, price: 6)
+Restaurant.find(1).noms.create(food_id: 3, price: 6)
+Restaurant.find(1).noms.create(food_id: 2, price: 6)
+Restaurant.find(1).noms.create(food_id: 1, price: 6)
 
 Vote.create(nom_id: 1, user_id: 1, vote_type: 0)
 Vote.create(nom_id: 2, user_id: 1, vote_type: 1)
@@ -31,8 +31,8 @@ Vote.create(nom_id: 1, user_id: 1, vote_type: 1)
 Vote.create(nom_id: 1, user_id: 1, vote_type: 0)
 Vote.create(nom_id: 1, user_id: 1, vote_type: 0)
 
-100.times.do
-	nomrandom = [0, 1].sample
+100.times do
+	nomrandom = [1..4].sample
 	voterandom = [0, 1].sample
 	Vote.create(nom_id: nomrandom, user_id: 1, vote_type: voterandom)
 end
