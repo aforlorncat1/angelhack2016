@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+
+  <div class="field">
+    <%= f.label :food_id %><br>
+    <%= select_tag(:food_id, options_for_select(@food)) %>
+  </div>
   <div class="field">
     <%= f.label :price %><br>
     <%= f.number_field :price %>
@@ -22,10 +27,6 @@
   <div class="field">
     <%= f.label :restaurant_id %><br>
     <%= f.number_field :restaurant_id %>
-  </div>
-  <div class="field">
-    <%= f.label :food_id %><br>
-    <%= f.number_field :food_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

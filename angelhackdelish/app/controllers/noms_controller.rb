@@ -15,6 +15,7 @@ class NomsController < ApplicationController
   # GET /noms/new
   def new
     @nom = Nom.new
+    @food = Food.all.map{ |c| [ c.name, c.id ] }
   end
 
   # GET /noms/1/edit
@@ -25,6 +26,7 @@ class NomsController < ApplicationController
   # POST /noms.json
   def create
     @nom = Nom.new(nom_params)
+    @nom.food_id = params[:food_id] 
 
     respond_to do |format|
       if @nom.save
