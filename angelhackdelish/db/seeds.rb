@@ -12,3 +12,6 @@ Food.create(name:"Char Kuey Teow", description:"not available")
 Food.create(name:"Sushi", description:"not available")
 Food.create(name:"Steak", description:"not available")
 
+Restaurant.create(name: "McDonalds", address: "1, Jalan Ampang", city: "Kuala Lumpur", state: "Kuala Lumpur")
+Restaurant.create(name: "Sushi King", address: "Quill City Mall, Jalan Sultan Ismail", city: "Kuala Lumpur", state: "Kuala Lumpur")
+Restaurant.create(name: "TGI Fridays", address: "35, Jalan Bukit Bintang, Bukit Bintang, 55100", city: "Kuala Lumpur", state: "Kuala Lumpur")

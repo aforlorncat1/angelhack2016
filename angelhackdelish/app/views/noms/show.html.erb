@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<p> This is the item page</p>
+
+<p>
+  <strong>Food Category:</strong>
+  <%= @nom.food.name %>
+</p>
+
 <p>
   <strong>Price:</strong>
   <%= @nom.price %>
@@ -12,13 +19,24 @@
 
 <p>
   <strong>Restaurant:</strong>
-  <%= @nom.restaurant_id %>
+  <%= @nom.restaurant.name %>
 </p>
 
+
 <p>
-  <strong>Food:</strong>
-  <%= @nom.food_id %>
+  <strong>Restaurant Location:</strong>
+  <%= @nom.restaurant.address %>
 </p>
+<!-- Restaurant Location
+Distance
+
+
+Other FOod from this restaurant:
+
+X
+X
+X -->
+
 
 <%= link_to 'Edit', edit_nom_path(@nom) %> |
 <%= link_to 'Back', noms_path %>
