@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ranked type:</strong>
+  <%= @leaderboard.ranked_type %>
+</p>
+
+<p>
+  <strong>Food:</strong>
+  <%= @leaderboard.food %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @leaderboard.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @leaderboard.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_leaderboard_path(@leaderboard) %> |
+<%= link_to 'Back', leaderboards_path %>

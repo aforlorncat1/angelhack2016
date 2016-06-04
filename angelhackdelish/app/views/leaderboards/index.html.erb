@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Leaderboards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ranked type</th>
+      <th>Food</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @leaderboards.each do |leaderboard| %>
+      <tr>
+        <td><%= leaderboard.ranked_type %></td>
+        <td><%= leaderboard.food %></td>
+        <td><%= leaderboard.start_date %></td>
+        <td><%= leaderboard.end_date %></td>
+        <td><%= link_to 'Show', leaderboard %></td>
+        <td><%= link_to 'Edit', edit_leaderboard_path(leaderboard) %></td>
+        <td><%= link_to 'Destroy', leaderboard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Leaderboard', new_leaderboard_path %>

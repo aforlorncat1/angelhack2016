@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @rank.nom %>
+</p>
+
+<p>
+  <strong>Leaderboard:</strong>
+  <%= @rank.leaderboard %>
+</p>
+
+<p>
+  <strong>Votecount:</strong>
+  <%= @rank.votecount %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @rank.position %>
+</p>
+
+<%= link_to 'Edit', edit_rank_path(@rank) %> |
+<%= link_to 'Back', ranks_path %>
