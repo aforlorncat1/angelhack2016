@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160604103933) do
+ActiveRecord::Schema.define(version: 20160604164446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(version: 20160604103933) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "leaderboards", force: :cascade do |t|
+    t.string   "ranked_type"
+    t.integer  "food_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "leaderboards", ["food_id"], name: "index_leaderboards_on_food_id", using: :btree
+
   create_table "noms", force: :cascade do |t|
     t.integer  "price"
     t.integer  "votecount"
@@ -41,6 +52,18 @@ ActiveRecord::Schema.define(version: 20160604103933) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
+
+  create_table "ranks", force: :cascade do |t|
+    t.integer  "nom_id"
+    t.integer  "leaderboard_id"
+    t.integer  "votecount"
+    t.integer  "position"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "ranks", ["leaderboard_id"], name: "index_ranks_on_leaderboard_id", using: :btree
+  add_index "ranks", ["nom_id"], name: "index_ranks_on_nom_id", using: :btree
 
   create_table "restaurants", force: :cascade do |t|
     t.text     "name"
@@ -84,6 +107,9 @@ ActiveRecord::Schema.define(version: 20160604103933) do
   add_index "votes", ["nom_id"], name: "index_votes_on_nom_id", using: :btree
   add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
 
+  add_foreign_key "leaderboards", "foods"
+  add_foreign_key "ranks", "leaderboards"
+  add_foreign_key "ranks", "noms"
   add_foreign_key "votes", "noms"
   add_foreign_key "votes", "users"
 end

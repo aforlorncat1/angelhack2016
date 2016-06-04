@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :ranks
+  resources :leaderboards
   get 'welcome/index'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
