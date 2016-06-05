@@ -1,0 +1,101 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@font-face {
+    font-family: coves;
+    src: url('Coves Light.otf');
+}
+
+body{
+  background-image: url('BG Gold1.png');
+  background-size: cover;
+  text-align: center;
+}
+
+.logo{
+  background-image: url('Frank Logo1.png');
+  background-size: cover;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin-top: 0px;
+  margin-left: 30vw;
+}
+
+.login{
+  background-color: white;
+  text-align: center;
+  position: relative;
+  top: 50vh;
+  left: 50%;
+  margin-top: -37vh;
+  margin-left: -40%;
+  width: 80%;
+  height: 50vh;
+}
+
+.login2{
+  text-align: center;
+  position: relative;
+  top: 50vh;
+  left: 50%;
+  margin-top: -37vh;
+  margin-left: -40%;
+  width: 80%;
+  height: 70vh;
+}
+
+.forms{
+  position: relative;
+  top: 20%;
+}
+
+.field input{
+  width: 80%;
+  height: 52px;
+  background-color: light-grey;
+}
+
+#fblogin{
+  margin-top: 20%;
+  width: 80%;
+  height: auto;
+}
+
+a{
+  text-decoration: none;
+}
+
+#search51{
+    background: #fcfcfc;
+    font: 18px avenir;
+    color:#bebebe;
+    width:60vw;
+    padding:10px 15px 10px 35px;
+    border: none;
+}
+
+p{
+  color: white;
+  font-family: 'Avenir';
+  font-size: 15px;
+}
+
+.searchglass{
+  background-image: url('SearchGlassGrey.png');
+  height: 45;
+  width: 45;
+}
