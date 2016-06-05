@@ -1,5 +1,6 @@
 class Leaderboard < ActiveRecord::Base
   belongs_to :food
+  has_many :ranks
   enum ranked_type: [:silver, :gold, :diamond] 
 
 def self.prepareboard
@@ -38,9 +39,19 @@ def self.prepareboard
 end
 
 def self.showboard(leaderboard_id)
-	Leaderboard.find(leaderboard_id)
+	Leaderboard.find(leaderboard_id).ranks.order(:position)
 	#find leaderboard_id, then find Rank where leaderboard_id sorted by position desc
 end
+
+#how to power search / browses
+#this is to show leaderboard for any particular food
+#@leaderboard = Leaderboard.where(food_id: #).last
+#Leaderboard.showboard(@leaderboard.id).each do |x|
+# print the particular line, with access to:
+# Restaurant Name:  Nom.find(x.nom_id).restaurant.name
+# Points: x.votecount
+# Position: x.currentpos
+#end
 
 
 #decay = modifyvotecount to take in the decay period
