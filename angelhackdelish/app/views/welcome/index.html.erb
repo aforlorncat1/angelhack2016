@@ -1,5 +1,21 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class='login2'>
+
+<div class='logo'></div>
+
+<!-- <form>
+<input type='text', name='query', class='searchbox'>
+<input type='submit', id='submit'>
+ -->
+
+<p>What do you want to eat today?</p>
+
+<form method="get" action="/search" id="searchbox5">
+    <input id="search51" name="q" type="text" size="40" placeholder="Search" />
+</form>
+    <div class='searchglass'></div>
+
 
 <%= link_to "Signout", destroy_user_session_path, method: :delete %>
+
+</div>
 
